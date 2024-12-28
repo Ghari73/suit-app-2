@@ -34,18 +34,20 @@ const HomeScreen = ({ navigation }) => {
   const [accountData, setAccountData] = useState({});
   const [allUsers, setAllUsers] = useState(null);
   const [loading, setLoading] = useState(false);
-  const { id } = useAuth();
+  const { id, getUserId } = useAuth();
 
+  let idUser = null
   const getDataUser = async () => {
     try {
+      const idUser = await getUserId();
       setLoading(true);
-      const data = await fetchUser(id);
+      const data = await fetchUser(idUser);
       setAccountData(data);
       setLoading(false);
     } catch (error) {
       setError(error.message);
-    }
-  };
+    }
+  };
   const getAllUser = async () => {
     try {
       setLoading(true);
