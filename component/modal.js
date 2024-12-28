@@ -133,7 +133,19 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 25,
     width: "80%",
+    marginVertical: 10,
     alignItems: "center",
+    width: 70
+  },
+  inputModal: {
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 5,
+    padding: 10,
+    width: "70%",
+    marginVertical: 10,
+    textAlign: 'left',
+    fontFamily: 'Lilita One'
   },
   input: {
     borderWidth: 1,
@@ -166,6 +178,11 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "orange",
     marginBottom: 10,
+  },
+  titleCreateRoom: {
+    fontSize: 24,
+    color: '#D27623',
+    fontFamily: 'Lilita One'
   },
   warningText: {
     fontSize: 16,
@@ -262,18 +279,37 @@ const MultiPlayerModal = ({ visible, onClose, roomNumber, setRoomNumber }) => (
   <Modal transparent visible={visible} animationType="fade">
     <View style={styles.modalContainer}>
       <View style={styles.modalContent}>
-        <Text style={styles.title}>Multi Player</Text>
-        <TouchableOpacity style={styles.buttonMultiPlayer}>
-          <Text style={styles.buttonText}>New Room</Text>
-        </TouchableOpacity>
-        <Text style={styles.titleMultiPlayer}>Enter Room</Text>
-        <TextInput
-          placeholder="Room Number"
-          style={styles.input}
-          value={roomNumber}
-          onChangeText={setRoomNumber}
-        />
-        
+      <View style={{ flexDirection:'row', alignSelf: 'left'}}>
+        <Ionicons style= {{marginRight: 10}} name= 'close-circle' size={28} color='#D27623' onPress={onClose}></Ionicons>
+        <Text style={styles.titleMultiPlayer}>Multi Player</Text>
+      </View> 
+        <View style={{width: '100%', marginVertical: 10}}>
+          <Text style= {styles.titleCreateRoom}>Create Room</Text>
+          <View style= {styles.row}>
+            <TextInput
+                placeholder="Enter Code"
+                style={styles.inputModal}
+              />
+              <TouchableOpacity style={styles.buttonMultiPlayer}>
+                <Text style={styles.buttonText}>Create</Text>
+              </TouchableOpacity>
+          </View>
+        </View>
+
+        <View style={{width: '100%', marginVertical: 10}}>
+          <Text style= {styles.titleCreateRoom}>Join Room</Text>
+          <View style= {styles.row}>
+            <TextInput
+                placeholder="Enter Code"
+                style={styles.inputModal}
+                value={roomNumber}
+                onChangeText={setRoomNumber}
+              />
+              <TouchableOpacity style={styles.buttonMultiPlayer}>
+                <Text style={styles.buttonText}>Join</Text>
+              </TouchableOpacity>
+          </View>
+        </View>
       </View>
     </View>
   </Modal>

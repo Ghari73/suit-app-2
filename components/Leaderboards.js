@@ -21,14 +21,14 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
       <ScrollView>
         {Users && (
           <DataTable style={{ gap: 10, paddingBottom: 80 }}>
-            {Users.map((user) => (
+            {Users.map((user, index) => (
               <DataTable.Row key={user.id} style={{ borderBottomWidth: 0 }}>
                 <DataTable.Cell
                   style={{ justifyContent: "center", maxWidth: 60 }}
                 >
-                  {user.id < 4 ? (
+                  {index < 4 ? (
                     <Image
-                      source={trophyIcons[user.id]}
+                      source={trophyIcons[index + 1]}
                       style={styles.trophyStyle}
                     ></Image>
                   ) : (
@@ -40,7 +40,7 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
                         textAlign: "center",
                       }}
                     >
-                      {user.id}
+                      {index + 1}
                     </Text>
                   )}
                 </DataTable.Cell>

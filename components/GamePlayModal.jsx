@@ -52,80 +52,66 @@ const GameModal = ({ visible, handle, fontFamily, data, navigation}) => {
                 }}
               >
                 <TouchableOpacity onPress={handle}>
-                  <Ionicons name="close-circle" size={30} color="red" />
+                  <Ionicons name="close-circle" size={30} color="#2395d2" />
                 </TouchableOpacity>
                 <Text
                   style={{
                     marginLeft: -24,
                     fontFamily: fontFamily,
                     fontSize: 30,
-                    color: "red",
+                    color: "#2395d2",
                   }}
                 >
                   {data.type}
                 </Text>
                 <View></View>
               </View>
-              <TouchableOpacity
-                onPress={handleJoinRoom}
-                style={{
-                  backgroundColor: "#19918F",
-                  margin: 15,
-                  padding: 20,
-                  borderRadius: 8,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "center",
-                    fontWeight: "bold",
-                    fontSize: 16,
-                    color: "white",
-                  }}
-                >
-                  New Room
-                </Text>
-              </TouchableOpacity>
-              <View
-                style={{
-                  flexDirection: "row",
-                  width: "100%",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text
-                  style={{
-                    fontFamily: fontFamily,
-                    fontSize: 30,
-                    color: "red",
-                  }}
-                >
-                  Enter Room
-                </Text>
-              </View>
-              <View
-                style={{
-                  flexDirection: "row",
-                  width: "100%",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <TextInput
-                  placeholder="Enter Room"
-                  onChangeText={setRoom}
-                  style={{
-                    backgroundColor: "white",
-                    margin: 15,
-                    padding: 20,
-                    height: 30,
-                    borderRadius: 10,
-                    width: "90%",
-                    borderWidth: 1,
-                  }}
-                ></TextInput>
-              </View>
+              <View style={{ marginVertical: 10 }}>
+        <Text style={{ fontSize: 18, fontFamily: fontFamily, marginBottom: 5, color: '#D27623' }}>
+          Join Room
+        </Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <TextInput
+            placeholder="Enter Code"
+            placeholderTextColor="#ccc"
+            onChangeText={setRoom}
+            style={{
+              backgroundColor: 'white',
+              padding: 10,
+              height: 40,
+              borderRadius: 10,
+              width: '70%',
+              textAlign: 'left',
+              borderColor: '#ccc',
+              borderWidth: 1,
+              marginRight: 10,
+              fontFamily: fontFamily
+            }}
+          />
+          <TouchableOpacity
+            onPress={handleJoinRoom}
+            style={{
+              backgroundColor: '#2395D2',
+              paddingVertical: 20,
+              paddingHorizontal: 15,
+              borderRadius: 8,
+              width: 80
+            }}
+          >
+            <Text
+              style={{
+                textAlign: 'center',
+                fontFamily: fontFamily,
+                fontSize: 16,
+                color: 'white',
+              }}
+            >
+              Join
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+              
             </View>
           </View>
         </View>
@@ -149,6 +135,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 20,
     padding: 20,
-    height: 360,
+    height: 200,
   },
 });
