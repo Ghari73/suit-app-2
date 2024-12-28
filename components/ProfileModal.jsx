@@ -59,14 +59,14 @@ const ProfileModal = ({ visible, handle, fontFamily, UserId, navigation }) => {
                 }}
               >
                 <TouchableOpacity onPress={handle}>
-                  <Ionicons name="close-circle" size={30} color="red" />
+                  <Ionicons name="close-circle" size={30} color="#D27623" />
                 </TouchableOpacity>
                 <Text
                   style={{
                     marginLeft: -24,
                     fontFamily: fontFamily,
                     fontSize: 30,
-                    color: "red",
+                    color: "#D27623",
                   }}
                 >
                   Pick Your Profile
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 20,
     padding: 20,
-    height: 360,
+    height: 240,
   },
   profileContainer: {
     flexDirection: "row",

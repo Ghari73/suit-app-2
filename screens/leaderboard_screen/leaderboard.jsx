@@ -18,12 +18,18 @@ const LeaderboardScreen = () => {
   const userId = 4 // ID pengguna saat ini  
   const [data, setData] = useState([]);
   const navigation = useNavigation();
-  const { id } = useAuth(); //penambahan
+  const { id, getUserId } = useAuth(); //penambahan
   const [fontsLoaded] = useFonts({
     'LilitaOne-Regular': require("../../assets/fonts/LilitaOneRegular.ttf"),
   });
 
+ let idUser = null
+  const fetchUserId = async() => {
+    let id = await getUserId()
+    idUser = id
+  }
   useEffect(() => {
+    
     const getRankingData = async () => {
       try {
         const rankingData = await fetchLeaderboards();
@@ -31,11 +37,11 @@ const LeaderboardScreen = () => {
 
         if (Array.isArray(rankingData)) {
           const sortedData = rankingData.sort((a, b) => b.point - a.point);
-
+          console.log("ini idUser:", idUser)
           const rankedData = sortedData.map((item, index) => ({
             ...item,
             rank: index + 1,
-            isUser: item.user_id === id ? "yes" : "no", //perubahan
+            isUser: item.user_id == idUser ? "yes" : "no", //perubahan
           }));
 
           setData(rankedData);
@@ -46,7 +52,7 @@ const LeaderboardScreen = () => {
         console.error("Error fetching leaderboard data:", err);
       }
     };
-
+    fetchUserId()
     getRankingData();
   }, []);
 
@@ -153,7 +159,6 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 36,
-    fontWeight: "bold",
     textAlign: "center",
     marginVertical: 35,
     marginTop: -35,
@@ -190,8 +195,8 @@ const styles = StyleSheet.create({
   },
   rank: {
     fontSize: 18,
-    fontWeight: "bold",
     color: "#333",
+    fontFamily: "Lilita One"
   },
   avatar: {
     width: 40,
@@ -204,13 +209,12 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     color: "#333",
-    fontFamily: "Roboto",
-    fontWeight: "600",
+    fontFamily: "Lilita One",
   },
   score: {
     fontSize: 16,
-    fontWeight: "bold",
     color: "#333",
+    fontFamily: "Lilita One"
   },
   medal: {
     width: 20,

@@ -15,13 +15,23 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
     3: require("../assets/images/bi_trophy-3.png"),
   };
   console.log(UserId);
+  let position = null
 
+  const savePosition = (pos) => {
+    position = pos
+  }
   return (
     <View style={styles.leaderBoardContainer}>
       <ScrollView>
         {Users && (
           <DataTable style={{ gap: 10, paddingBottom: 80 }}>
-            {Users.map((user, index) => (
+          {Users.map((user, index) => {
+            // Logika untuk memanggil savePosition
+            if (user.user_id === UserId) {
+              savePosition(index+1);
+            }
+
+            return (
               <DataTable.Row key={user.id} style={{ borderBottomWidth: 0 }}>
                 <DataTable.Cell
                   style={{ justifyContent: "center", maxWidth: 60 }}
@@ -30,13 +40,12 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
                     <Image
                       source={trophyIcons[index + 1]}
                       style={styles.trophyStyle}
-                    ></Image>
+                    />
                   ) : (
                     <Text
                       style={{
                         fontFamily: fontFamily,
                         fontSize: 24,
-                        fontWeight: "bold",
                         textAlign: "center",
                       }}
                     >
@@ -50,13 +59,12 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
                   <Image
                     source={{ uri: user.User.avatar_url }}
                     style={styles.avatarStyle}
-                  ></Image>
+                  />
                 </DataTable.Cell>
                 <DataTable.Cell style={{ justifyContent: "center" }}>
                   <Text
                     style={{
                       fontSize: 20,
-                      fontWeight: "bold",
                       paddingLeft: 15,
                       fontFamily: fontFamily,
                     }}
@@ -68,7 +76,6 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
                   <Text
                     style={{
                       fontSize: 20,
-                      fontWeight: "bold",
                       fontFamily: fontFamily,
                     }}
                   >
@@ -76,8 +83,10 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
                   </Text>
                 </DataTable.Cell>
               </DataTable.Row>
-            ))}
-          </DataTable>
+            );
+          })}
+        </DataTable>
+
         )}
       </ScrollView>
       <TouchableOpacity
@@ -96,13 +105,12 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
                   <Text
                     style={{
                       color: "white",
-                      fontWeight: "bold",
                       fontSize: 20,
                       fontFamily: fontFamily,
                       textAlign: "center",
                     }}
                   >
-                    {user.id}
+                    {position}
                   </Text>
                 </DataTable.Cell>
                 <DataTable.Cell
@@ -117,7 +125,6 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
                   <Text
                     style={{
                       fontSize: 20,
-                      fontWeight: "bold",
                       paddingLeft: 15,
                       color: "white",
                       fontFamily: fontFamily,
@@ -130,7 +137,6 @@ const Leaderboards = ({ Avatar, fontFamily, navigation, Users, UserId }) => {
                   <Text
                     style={{
                       fontSize: 20,
-                      fontWeight: "bold",
                       color: "white",
                       fontFamily: fontFamily,
                     }}

@@ -223,7 +223,7 @@ const TermsCon =({ visible, onClose }) => {
           <Text style={{marginBottom: 10, fontSize: 24, fontFamily: 'Lilita One'}}>Terms and Condition</Text>
 
           <Text style={{marginBottom: 30, fontSize: 16, textAlign:'justify'}}>
-            By using Swulit, you agree to be bound by these Terms of Service and any 
+            By using SUWLIT, you agree to be bound by these Terms of Service and any 
             additional terms, policies, or guidelines incorporated by reference. 
             If you do not agree to these terms, do not use the App. To access 
             certain features of the App, you may need to create an account and 
@@ -247,7 +247,7 @@ const TermsCon =({ visible, onClose }) => {
 
           <Text style={{marginBottom: 10, fontSize: 24, fontFamily: 'Lilita One'}}>Privacy Policy</Text>
           <Text style={{marginBottom: 50, fontSize: 16, textAlign: 'justify'}}>
-            At Swulit, we are committed to protecting your privacy. We collect 
+            At SUWLIT, we are committed to protecting your privacy. We collect 
             personal information, such as your name and email address, when 
             you create an account or interact with the App. We also collect 
             usage data, including information about your device, IP address, 

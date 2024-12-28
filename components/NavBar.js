@@ -26,14 +26,13 @@ const NavBar = ({ Avatar, Username, fontFamily, UserId, navigation }) => {
             <Text
               style={{
                 color: "white",
-                fontWeight: "bold",
                 fontSize: 25,
                 fontFamily: fontFamily,
               }}
             >
               {Username}
             </Text>
-            <Text style={{ color: "white", fontWeight: "bold" }}>Suwlit</Text>
+            <Text style={{ color: "white"}}>Suwlit</Text>
           </View>
         </View>
         <TouchableOpacity onPress={handleModal}>

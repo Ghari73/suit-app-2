@@ -36,7 +36,6 @@ const HomeScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const { id, getUserId } = useAuth();
 
-  let idUser = null
   const getDataUser = async () => {
     try {
       const idUser = await getUserId();
@@ -104,7 +103,7 @@ const HomeScreen = ({ navigation }) => {
       hand: "Computer",
     },
   ];
-  const fontFamily = "LilitaOne";
+  const fontFamily = "Lilita One";
 
   return (
     <ImageBackground source={Background} style={styles.background}>
@@ -146,7 +145,6 @@ const HomeScreen = ({ navigation }) => {
             <Text
               style={{
                 fontSize: 24,
-                fontWeight: "bold",
                 color: "#266489",
                 fontFamily: fontFamily,
               }}

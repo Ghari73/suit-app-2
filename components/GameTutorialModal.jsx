@@ -33,12 +33,11 @@ const GameTutorialModal = ({ visible, handle, fontFamily }) => {
             <View style={{ gap: 20 }}>
               <View style={styles.navigationContainer}>
                 <TouchableOpacity onPress={handle}>
-                  <Ionicons name="close-circle" size={30} color="red" />
+                  <Ionicons name="close-circle" size={30} color="#D27623" />
                 </TouchableOpacity>
                 <Text
                   style={{
                     fontSize: 24,
-                    fontWeight: "bold",
                     fontFamily: fontFamily,
                     color: "#D27623",
                   }}
@@ -63,7 +62,6 @@ const GameTutorialModal = ({ visible, handle, fontFamily }) => {
                   style={{
                     fontSize: 30,
                     color: "#2395D2",
-                    fontWeight: "bold",
                     fontFamily: fontFamily,
                   }}
                 >
@@ -73,7 +71,6 @@ const GameTutorialModal = ({ visible, handle, fontFamily }) => {
                   style={{
                     fontSize: 30,
                     color: "#D27623",
-                    fontWeight: "bold",
                     fontFamily: fontFamily,
                   }}
                 >

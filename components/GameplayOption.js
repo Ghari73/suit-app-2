@@ -106,7 +106,6 @@ const styles = StyleSheet.create({
   },
   playerTextLeft: {
     fontSize: 20,
-    fontWeight: "bold",
     marginTop: 10,
     alignSelf: "flex-end",
     color: "#000",
@@ -114,7 +113,6 @@ const styles = StyleSheet.create({
   },
   playerTextRight: {
     fontSize: 20,
-    fontWeight: "bold",
     marginBottom: 10,
     marginTop: 30,
     alignSelf: "flex-start",
@@ -130,7 +128,6 @@ const styles = StyleSheet.create({
   },
   vsText: {
     fontSize: 28,
-    fontWeight: "bold",
     color: "#000000",
     marginVertical: 20,
   },
@@ -149,7 +146,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 24,
-    fontWeight: "bold",
     color: "#FFFFFF",
     textAlign: "center",
   },

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "suit-app",
-    "slug": "suitapp",
+    "slug": "suitappfix",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -31,11 +31,20 @@
     },
     "plugins": [
       "expo-audio",
-      "expo-font"
+      "expo-font",
+      ["expo-build-properties",
+      {
+        "android":{
+          "usesCleartextTraffic": true
+        },
+        "ios": {
+          "flipper": true
+        }
+      }]
     ],
     "extra": {
       "eas": {
-        "projectId": "a6c17483-0a74-46fd-8037-5693325e9b5f"
+        "projectId": "c6523261-f40d-4c93-819c-311a62113e95"
       }
     },
     "owner": "ghari73"
